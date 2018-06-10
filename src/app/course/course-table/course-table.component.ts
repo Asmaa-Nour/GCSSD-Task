@@ -15,8 +15,11 @@ export class CourseTableComponent implements OnInit {
 
   ngOnInit() {
     this.courses=this.CourseServiceService.getAll();
+    
   }
-  delete(){
+  delete(id:number){
+    console.log(this.course);
+    debugger
     this.CourseServiceService.delete(this.course.id);
   }
 

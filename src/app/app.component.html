@@ -1,31 +1,5 @@
 <div class="body">
-  <div class="row">
-    <div class="topheader col-md-12">
-      <p class="task">Task</p>
-    </div>
-
-  </div>
-  <div id="header">
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active">
-        <a href="#">Instructors</a>
-      </li>
-      <li role="presentation">
-        <a [routerLink]="['/student/component']">
-          Students
-        </a>
-      </li>
-      <li role="presentation">
-        <a [routerLink]="['/course/component']">
-          Courses</a>
-      </li>
-    </ul>
-  </div>
-
+<app-header-component></app-header-component>
   <router-outlet></router-outlet>
-  <div class="row">
-    <div class="footer  col-md-12">
-
-    </div>
-  </div>
+<app-footer-component></app-footer-component>
 </div>

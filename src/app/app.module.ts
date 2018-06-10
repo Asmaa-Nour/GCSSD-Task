@@ -27,6 +27,8 @@ import { StudentComponent } from './student/student.component';
 import { StudentMenuComponentComponent } from './student/student-menu-component/student-menu-component.component';
 import { CourseMenuItemComponent } from './course/course-menu-item/course-menu-item.component';
 import { InstructorMenuItemComponent } from './instructor/instructor-menu-item/instructor-menu-item.component';
+import { FooterComponentComponent } from './shared/footer-component/footer-component.component';
+import { HeaderComponentComponent } from './shared/header-component/header-component.component';
 
 const routes: Routes = [
   {path :'', component : InstructorComponent},
@@ -57,6 +59,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+
+    //instructor module components
     InstructorAddComponent,
     InstructorComponent,
     InstructorSmallItemComponent,
@@ -65,23 +69,30 @@ const routes: Routes = [
     OneSmallRowComponent,
     InstructorEditComponent,
 
+    //course module components
     CourseListingComponent,
     CourseSmallItemComponent,
     CourseComponent,
     CourseAddComponent,
     CourseTableComponent,
     CourseEditComponent,
-    
+
+    //student module components
     StudentSmallItemComponent,
     StudentListingComponent,
     StudentEditComponent,
     StudentAddComponent,
     StudentTableComponent,
     StudentComponent,
+
+    //menus
     StudentMenuComponentComponent,
     CourseMenuItemComponent,
-    InstructorMenuItemComponent
-  
+    InstructorMenuItemComponent,
+    
+    // shared components
+    FooterComponentComponent,
+    HeaderComponentComponent
   ],
   imports: [
     BrowserModule,

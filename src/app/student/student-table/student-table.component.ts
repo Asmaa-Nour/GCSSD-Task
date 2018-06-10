@@ -15,8 +15,7 @@ export class StudentTableComponent implements OnInit {
   ngOnInit() {
     this.students=this.StudentServiceService.getAll();
   }
-  delete(){
-    debugger
+  delete(id:number){
     this.StudentServiceService.delete(this.student.id);
   }
 
