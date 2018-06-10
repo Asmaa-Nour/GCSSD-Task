@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+      {{course.name}}
+    </div>
+
+    <div class="icons " >
+        <a [routerLink]="['/course/edit',course.id]">
+            <button type="button" class=" btn-primary btn-info primary btn-xs">
+                <i class="fa fa-edit">
+                </i>
+            </button>
+        </a>
+
+          <a>
+            <button type="button" class="btn-danger btn-xs" (click)="delete(course.id)">
+                <i class="fa fa-trash">
+                </i>
+            </button>
+        </a>
+    </div>
+
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">{{course.hours}} hours</h5>
+      <p class="card-text">{{course.description}}</p>
+    </div>
+  </div>

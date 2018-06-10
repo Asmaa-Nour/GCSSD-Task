@@ -1,0 +1,19 @@
+<tr>
+    <td  width="50">{{instructor.id}}</td>
+    <td>{{instructor.name}}</td>
+    <td>{{instructor.phone}}</td>
+    <td>{{instructor.email}}</td>
+    <td>{{instructor.Department}}</td>
+    <td>
+            <p>{{instructor.Courses}}</p>
+    </td>
+    <td class="btns" >
+            <button class="btn1" (click)="delete(instructor.id)"><i class="fas fa-trash-alt"></i></button>
+            <div class="btn2">
+                    <a [routerLink]="['/instructor/edit',instructor.id]">
+                        <button class=""><i class="fas fa-edit"> </i></button>     
+                    </a>
+            </div>
+            
+    </td>
+</tr>

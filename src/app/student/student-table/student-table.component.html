@@ -1,0 +1,36 @@
+<div class="row menu">
+        <app-student-menu-component></app-student-menu-component>
+    </div>
+<div class="col-md-10 mydiv">
+    <table class="table table-striped ">
+
+        <tr>
+            <th scope="col" width="50">#</th>
+            <th scope="col" width="150">Name</th>
+            <th scope="col" width="150">Phone</th>
+            <th scope="col" width="150">Email</th>
+            <th scope="col" width="150">Birthdate</th>
+            <th scope="col" width="100"> </th>
+        </tr>
+        <tr *ngFor="let student of students">
+            <td width="50">{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.phone}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.dateOfBirth}}</td>
+          
+            <td class="btns">
+                <button class="" (click)="delete(student.id)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+                <a [routerLink]="['/student/edit',student.id]">
+                    <button class="btn2">
+                        <i class="fas fa-edit"> </i>
+                    </button>
+                </a>
+
+            </td>
+        </tr>
+    </table>
+</div>

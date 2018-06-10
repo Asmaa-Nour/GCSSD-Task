@@ -1,0 +1,30 @@
+<div class="icons " >
+        <a [routerLink]="['/student/edit',student.id]">
+            <button type="button" class=" btn-primary btn-info primary btn-xs">
+                <i class="fa fa-edit">
+                </i>
+            </button>
+        </a>
+
+          <a>
+            <button type="button" class="btn-danger btn-xs" (click)="delete(student.id)">
+                <i class="fa fa-trash">
+                </i>
+            </button>
+        </a>
+    </div>
+    
+<div class="card " style="width: 18rem;">
+  
+   
+            <!-- <img class="card-img-top img-responsive img-thumbnail" src="{{instructor.image}}" alt="Card image cap" > -->
+    
+    <div class="card-body">
+      <h5 class="card-title">{{student.name}}</h5>
+      <p class="card-text">{{student.phone}}</p>
+      <p class="card-text">{{student.email}}</p>
+     
+
+    </div>
+  </div>
+  

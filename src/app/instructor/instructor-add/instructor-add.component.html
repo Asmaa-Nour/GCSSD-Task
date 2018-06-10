@@ -1,0 +1,55 @@
+<div class="row">
+    <app-instructor-menu-item></app-instructor-menu-item>
+</div>
+
+<div class="row div1">
+  <div class="col-md-6">
+    <form [formGroup]="myForm" (ngSubmit)="add()">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input name="name" formControlName="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Phone</label>
+        <input name="phone" formControlName="phone" type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter your phone">
+      </div>
+ 
+      <div class="form-group">
+        <label for="inputEmail" class="control-label">Email address</label>
+        <input name="email" formControlName="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <div class="help-block with-errors"></div>
+        
+      </div>
+
+      <div class="form-group">
+        <label for="Department">Department</label>
+        <select name="department" formControlName="department" class="form-control" id="Department">
+          <option>IT</option>
+          <option>Finance</option>
+          <option>Commerce</option>
+          <option>HR</option>
+          <option>Bussines Intillegnce</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Courses">Courses</label>
+        <select  name="courses" formControlName="courses" multiple class="form-control" id="Courses">
+          <option>OOP</option>
+          <option>Data Base</option>
+          <option>Photoshop</option>
+          <option>UI</option>
+        </select>
+      </div>
+      <!-- <label class="custom-file">
+        <input name="image" formControlName="image" type="file" id="file" class="custom-file-input">
+        <span class="custom-file-control"></span>
+      </label> -->
+      <div class="btns">
+          <!-- (click)="modalRef.hide()" -->
+        <button type="button" class="btn btn-tertiary mr-xs mb-sm ">Cancel</button>
+        <button type="submit" class="btn btn-tertiary mr-xs mb-sm">Add</button>
+      </div>
+
+    </form>
+  </div>
+</div>

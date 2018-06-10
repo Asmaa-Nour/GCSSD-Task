@@ -1,0 +1,41 @@
+<div class="row">
+        <app-instructor-menu-item></app-instructor-menu-item>
+</div>
+
+
+<div class="col-md-10 mydiv">
+    <table class="table table-striped ">
+
+        <tr>
+            <th scope="col" width="50">#</th>
+            <th scope="col" width="150">Name</th>
+            <th scope="col" width="150">Phone</th>
+            <th scope="col" width="150">Email</th>
+            <th scope="col" width="150">Department</th>
+            <th scope="col" width="300">Courses</th>
+            <th scope="col" width="100"> </th>
+        </tr>
+        <tr *ngFor="let instructor of instructors">
+            <td width="50">{{instructor.id}}</td>
+            <td>{{instructor.name}}</td>
+            <td>{{instructor.phone}}</td>
+            <td>{{instructor.email}}</td>
+            <td>{{instructor.Department}}</td>
+            <td>
+                <p>{{instructor.Courses}}</p>
+            </td>
+            <td class="btns">
+                <button class="" (click)="delete(instructor.id)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+                <a [routerLink]="['/instructor/edit',instructor.id]">
+                    <button class="btn2">
+                        <i class="fas fa-edit"> </i>
+                    </button>
+                </a>
+
+            </td>
+        </tr>
+    </table>
+</div>

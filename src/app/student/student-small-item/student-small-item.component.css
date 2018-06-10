@@ -1,0 +1,20 @@
+.card{
+    margin-bottom: 50px;
+    border: 3px solid lightgrey; 
+}
+.card-body{
+    text-align:center;
+}
+.icons{
+    text-align:center;
+}
+.card-title{
+    font-size: 16px;
+    color: #337ab7;
+    font-family: Verdana;
+    font-weight: 580;
+}
+.card-text{
+    font-size: 14px;
+    font-family: Verdana;
+}
