@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import {RouterModule, Routes,ActivatedRoute} from '@angular/router';
+import{Observable} from 'rxjs/Rx'
+
+import { AppComponent } from './app.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { InstructorAddComponent } from './instructor/instructor-add/instructor-add.component';
 import { InstructorSmallItemComponent } from './instructor/instructor-small-item/instructor-small-item.component';
