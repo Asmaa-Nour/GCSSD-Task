@@ -22,7 +22,9 @@
     <div class="card-body">
       <h5 class="card-title">{{instructor.name}}</h5>
       <p class="card-text">{{instructor.Department}}</p>
-      <a href="#" class="btn btn-primary">Know more</a>
+      <a [routerLink]="['/instructor/details',instructor.id]">
+         <button class="btn btn-primary">Know more</button>
+        </a>
      
 
     </div>

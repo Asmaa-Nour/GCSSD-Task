@@ -4,7 +4,38 @@
 
 <div class="row div1">
   <div class="col-md-6">
-    <form [formGroup]="myForm" (ngSubmit)="add()">
+      <button class="btn btn-primary back-btn" (click)="goBack()">Go Back</button>
+   
+      <form #f="ngForm" (ngSubmit)="add(f)" ngNativeValidate>
+          <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name" placeholder="enter your name">
+          </div>
+          <div class="form-group">
+            <label for="phone">phone</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="phone" id="phone" placeholder="enter your phone">
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="email" id="email" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="department">dapartment</label>
+            <input type="text" name="department" placeholder="enter your department" class="form-control" [(ngModel)]="department" id="date">
+          </div>
+          <div class="form-group">
+              <label for="courses">courses</label>
+              <input type="text" name="courses" placeholder="enter your courses" class="form-control" [(ngModel)]="courses" id="date">
+            </div>
+  
+          <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+        </form>
+ 
+  </div>
+</div>
+
+
+   <!-- <form [formGroup]="myForm" (ngSubmit)="add()">
       <div class="form-group">
         <label for="exampleFormControlInput1">Name</label>
         <input name="name" formControlName="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
@@ -44,12 +75,10 @@
         <input name="image" formControlName="image" type="file" id="file" class="custom-file-input">
         <span class="custom-file-control"></span>
       </label> -->
-      <div class="btns">
+      <!-- <div class="btns"> -->
           <!-- (click)="modalRef.hide()" -->
-        <button type="button" class="btn btn-tertiary mr-xs mb-sm ">Cancel</button>
+        <!-- <button type="button" class="btn btn-tertiary mr-xs mb-sm ">Cancel</button>
         <button type="submit" class="btn btn-tertiary mr-xs mb-sm">Add</button>
-      </div>
+      </div> -->
 
-    </form>
-  </div>
-</div>
+    <!-- </form>  -->

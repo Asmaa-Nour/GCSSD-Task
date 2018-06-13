@@ -1,7 +1,32 @@
 <div class="row menu">
     <app-student-menu-component></app-student-menu-component>
 </div>
-    <div class="row div1">
+<div class="row div1">
+  <div class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="update(f)" ngNativeValidate>
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name" placeholder="{{student.name}}">
+        </div>
+        <div class="form-group">
+          <label for="phone">phone</label>
+          <input type="text" class="form-control" name="phone" [(ngModel)]="phone" id="phone" placeholder="{{student.phone}}">
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="email" id="email" placeholder="{{student.email}}">
+        </div>
+        <div class="form-group">
+          <label for="dateOfBirth">date of birth</label>
+          <input type="date" name="dateOfBirth" placeholder="{{student.dateOfBirth}}" class="form-control" [(ngModel)]="dateOfBirth" id="date">
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+      </form>
+</div>
+</div>
+
+    <!-- <div class="row div1">
         <div class="col-md-6">
           <form [formGroup]="editForm" (ngSubmit)="update()">
             <div class="form-group">
@@ -36,5 +61,5 @@
           </form>
         </div>
       </div>
-     
+      -->
       

@@ -9,12 +9,15 @@ import { StudentServiceService } from '../../shared/services/student-service.ser
 })
 export class StudentSmallItemComponent implements OnInit {
   @Input() student:Istudent;
+  id:number;
   constructor(private StudentServiceService:StudentServiceService) { }
 
   ngOnInit() {
+  
   }
   delete(){
     this.StudentServiceService.delete(this.student.id);
   }
+  
 
 }

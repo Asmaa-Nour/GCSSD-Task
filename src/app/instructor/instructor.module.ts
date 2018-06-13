@@ -6,27 +6,30 @@ import { InstructorSmallItemComponent } from './instructor-small-item/instructor
 import { InstructorListingComponent } from './instructor-listing/instructor-listing.component';
 import { InstructorsTableComponent } from './instructors-table/instructors-table.component';
 import { RouterModule, Routes ,ActivatedRoute} from '@angular/router';
-import { MenuComponentComponent } from './menu-component/menu-component.component';
 import { OneSmallRowComponent } from './one-small-row/one-small-row.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { InstructorEditComponent } from './instructor-edit/instructor-edit.component';
 import { InstructorMenuItemComponent } from './instructor-menu-item/instructor-menu-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InstructorDetailsComponent } from './instructor-details/instructor-details.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [InstructorComponent,
     InstructorAddComponent,
     InstructorSmallItemComponent,
     InstructorListingComponent,
     InstructorsTableComponent,
-    MenuComponentComponent,
     OneSmallRowComponent,
     InstructorEditComponent,
-    InstructorMenuItemComponent
+    InstructorMenuItemComponent,
+    InstructorDetailsComponent
 ]
 })
 export class InstructorModule { }

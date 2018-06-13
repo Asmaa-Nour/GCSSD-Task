@@ -1,11 +1,12 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import {NgControl} from '@angular/forms';
+import { NgControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Iinstructor } from '../../shared/interfaces/Iinstructor';
 import { InstructorServiceService } from '../../shared/services/instructor-service.service';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Location } from '@angular/common';
+import { Icourse } from '../../shared/interfaces/Icourse';
+import { Istudent } from '../../shared/interfaces/Istudent';
 
 @Component({
   selector: 'app-instructor-edit',
@@ -13,39 +14,40 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
   styleUrls: ['./instructor-edit.component.css']
 })
 export class InstructorEditComponent implements OnInit {
-  i: Iinstructor;
-  editForm: FormGroup;
-  id:number;
-  modalRef: BsModalRef;
-  constructor(private InstructorServiceService:InstructorServiceService,private activatedRoute:ActivatedRoute,private route:Router , private modalService: BsModalService) { }
+  instructor: Iinstructor;
+  name: string;
+  phone: string;
+  email: string;
+  department: string;
+  courses: Icourse[];
+  students: Istudent[];
+  getInstructor() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.instructor = this.InstructorServiceService.getInstructor(id);
+    console.log(this.instructor);
+  }
+  update(form) {
+    this.instructor = this.InstructorServiceService.getInstructor(this.instructor.id);
+    console.log(this.instructor);
+    var i = this.InstructorServiceService.instructors.indexOf(this.instructor);
+    console.log(i);
+    this.instructor = {
+      id: this.instructor.id,
+      name: form.value.name == undefined ? this.instructor.name : form.value.name,
+      phone: form.value.phone == undefined ? this.instructor.phone : form.value.phone,
+      email: form.value.email == undefined ? this.instructor.email : form.value.email,
+      Department: form.value.department == undefined ? this.instructor.Department : form.value.department,
+      Courses: form.value.courses == undefined ? this.instructor.Courses : form.value.courses,
+    }
+    this.InstructorServiceService.instructors[i] = this.instructor;
+    console.log(this.InstructorServiceService.instructors);
+    this.InstructorServiceService.edit(this.instructor).subscribe();
+    this.router.navigate(['../student.component.html']);
+  }
+
+  constructor(private InstructorServiceService: InstructorServiceService, private route: ActivatedRoute, private location: Location, private router: Router) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params)=>{this.id=params['id'];});
-    this.i = this.InstructorServiceService.getById(this.id);
-
-    this.editForm=new FormGroup({
-      name: new FormControl(),
-      phone: new FormControl(),
-      email: new FormControl(),
-      courses: new FormControl(),
-      department: new FormControl(),
-    });
+    this.getInstructor();
   }
-  update(){
-    this.i={
-      id:this.id,
-      name:this.editForm.get('name').value,
-      phone:this.editForm.get('phone').value,
-      email:this.editForm.get('email').value,
-      Courses:this.editForm.get('courses').value,
-      Department:this.editForm.get('department').value,
-      image:'../../../assets/Unknown.jpg'
-    }
-    this.InstructorServiceService.update(this.i);
-    this.route.navigate(['instructor/component']);
-  }
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-  }
-
 }

@@ -5,15 +5,18 @@ import { CourseSmallItemComponent } from './course-small-item/course-small-item.
 import { CourseListingComponent } from './course-listing/course-listing.component';
 import { RouterModule, Routes ,ActivatedRoute} from '@angular/router';
 import { CourseAddComponent } from './course-add/course-add.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CourseTableComponent } from './course-table/course-table.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CourseMenuItemComponent } from './course-menu-item/course-menu-item.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [CourseComponent,
     CourseSmallItemComponent,

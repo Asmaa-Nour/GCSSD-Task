@@ -4,5 +4,6 @@ export interface Istudent {
     phone:number,
     email:string,
     dateOfBirth?:Date,
-    courses?:string[]
+    courses?:string[],
+    instructors?:string[]
 }

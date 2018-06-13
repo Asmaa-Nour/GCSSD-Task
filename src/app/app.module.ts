@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes,ActivatedRoute} from '@angular/router';
-import{Observable} from 'rxjs/Rx'
-
+import {Http, HttpModule} from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { InstructorAddComponent } from './instructor/instructor-add/instructor-add.component';
@@ -31,6 +32,11 @@ import { CourseMenuItemComponent } from './course/course-menu-item/course-menu-i
 import { InstructorMenuItemComponent } from './instructor/instructor-menu-item/instructor-menu-item.component';
 import { FooterComponentComponent } from './shared/footer-component/footer-component.component';
 import { HeaderComponentComponent } from './shared/header-component/header-component.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { InstructorDetailsComponent } from './instructor/instructor-details/instructor-details.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 const routes: Routes = [
   {path :'', component : InstructorComponent},
@@ -39,7 +45,9 @@ const routes: Routes = [
     { path: 'add', component: InstructorAddComponent},
     { path: 'listing', component: InstructorListingComponent},
     { path: 'table', component: InstructorsTableComponent},
-    { path:'edit/:id' , component: InstructorEditComponent}
+    { path:'edit/:id' , component: InstructorEditComponent},
+    { path:'details/:id' , component: InstructorDetailsComponent}
+    
   ]},
   {path:'course',children:[
     { path:'component', component: CourseComponent},
@@ -70,6 +78,7 @@ const routes: Routes = [
     InstructorsTableComponent,
     OneSmallRowComponent,
     InstructorEditComponent,
+    InstructorDetailsComponent,
 
     //course module components
     CourseListingComponent,
@@ -99,12 +108,18 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule,
+    HttpModule,
     RouterModule.forRoot(routes),
     [TooltipModule.forRoot()],
     [ModalModule.forRoot()],
     FormsModule,
     ReactiveFormsModule,
-    [ReactiveFormsModule]
+    [ReactiveFormsModule],
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule
     ],
   providers: [],
   bootstrap: [AppComponent]

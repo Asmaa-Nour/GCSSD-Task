@@ -1,8 +1,17 @@
-.footer{
+/* .footer{
     background-color: black;
     height: 80px;
-    /* position: fixed; */
+   // position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+} */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
 }

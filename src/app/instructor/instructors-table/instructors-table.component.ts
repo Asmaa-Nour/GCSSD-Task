@@ -8,12 +8,19 @@ import { InstructorServiceService } from '../../shared/services/instructor-servi
   styleUrls: ['./instructors-table.component.css']
 })
 export class InstructorsTableComponent implements OnInit {
- instructors:Iinstructor[];
+ //instructors:Iinstructor[];
+ instructors:any[]=[];
  instructor:Iinstructor;
   constructor(private InstructorServiceService:InstructorServiceService) { }
-
+  getInstructors() {
+    this.InstructorServiceService.getInstructors().subscribe(res => {
+      this.InstructorServiceService.instructors = res;
+      this.instructors=this.InstructorServiceService.instructors;
+    });
+  }
   ngOnInit() {
-    this.instructors=this.InstructorServiceService.getAll();
+    //this.instructors=this.InstructorServiceService.getInstructors();
+    this.getInstructors();
   }
   delete(){
     this.InstructorServiceService.delete(this.instructor.id);

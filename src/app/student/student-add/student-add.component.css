@@ -1,9 +1,11 @@
+
 form{
     margin-bottom: 80px;
 }
 .div1{
-    margin-left: 50px;
-    margin-top: 50px;
+    /* margin-left: 50px; */
+    padding-left: 2%;
+    margin-top: 2%;
 }
 .btns{
     float: right;
@@ -15,3 +17,7 @@ form{
 .menu{
     margin-left: 20px;
 }
+.mySelect{
+    width: 100%;
+}
+

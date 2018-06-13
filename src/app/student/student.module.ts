@@ -8,23 +8,31 @@ import { StudentListingComponent } from './student-listing/student-listing.compo
 import { RouterModule, Routes ,ActivatedRoute} from '@angular/router';
 import { StudentTableComponent } from './student-table/student-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuComponentComponent } from './menu-component/menu-component.component';
 import { StudentMenuComponentComponent } from './student-menu-component/student-menu-component.component';
+import { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
-  declarations: [StudentComponent,
+  declarations: [
+    StudentComponent,
     StudentSmallItemComponent,
     StudentEditComponent,
     StudentAddComponent,
     StudentListingComponent,
     StudentTableComponent,
-    MenuComponentComponent,
     StudentMenuComponentComponent
 ]
 })

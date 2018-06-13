@@ -10,12 +10,18 @@ import { Icourse } from '../../shared/interfaces/Icourse';
 })
 export class CourseTableComponent implements OnInit {
   course:Icourse;
-  courses:Icourse[];
+  courses: any[]=[];
+  //courses:Icourse[];
   constructor(private CourseServiceService:CourseServiceService) { }
-
+  getCourses() {
+    this.CourseServiceService.getCourses().subscribe(res => {
+      this.CourseServiceService.courses = res;
+      this.courses=this.CourseServiceService.courses;
+    });
+  }
   ngOnInit() {
-    this.courses=this.CourseServiceService.getAll();
-    
+    //this.courses=this.CourseServiceService.getCourses();
+    this.getCourses();
   }
   delete(id:number){
     console.log(this.course);

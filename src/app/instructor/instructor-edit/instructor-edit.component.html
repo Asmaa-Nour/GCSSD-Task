@@ -1,19 +1,41 @@
-<!-- <a (click)="openModal(template)" class="btn btn-borders btn-sm btn-primary custom-button text-uppercase" data-toggle="modal"
-        data-target="#defaultModal">
-            <button type="button" class=" btn-primary btn-info primary btn-xs">
-                <i class="fa fa-edit">
-                </i>
-            </button>
-        </a> 
-         -->
-<!-- <ng-template #template> -->
-    <div class="row menu">
-        <app-instructor-menu-item></app-instructor-menu-item>
+<div class="row menu">
+  <app-instructor-menu-item></app-instructor-menu-item>
 </div>
 
 <div class="row div1">
   <div class="col-md-6">
-    <form [formGroup]="editForm" (ngSubmit)="update()">
+
+    <form #f="ngForm" (ngSubmit)="update(f)" ngNativeValidate>
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name" placeholder="{{instructor.name}}">
+      </div>
+      <div class="form-group">
+        <label for="phone">phone</label>
+        <input type="text" class="form-control" name="phone" [(ngModel)]="phone" id="phone" placeholder="{{instructor.phone}}">
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="email" id="email" placeholder="{{instructor.email}}">
+      </div>
+      <div class="form-group">
+        <label for="department">dapartment</label>
+        <input type="text" name="text" placeholder="{{instructor.Department}}" class="form-control" [(ngModel)]="department" id="date">
+      </div>
+      <div class="form-group">
+        <label for="courses">courses</label>
+        <input type="text" name="text" placeholder="{{instructor.Courses}}" class="form-control" [(ngModel)]="courses" id="date">
+      </div>
+
+      <div class="form-group">
+        <label for="students">students</label>
+        <input type="text" name="text" placeholder="{{instructor.students}}" class="form-control" [(ngModel)]="courses" id="date">
+      </div>
+
+      <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+    </form>
+
+    <!-- <form [formGroup]="editForm" (ngSubmit)="update()">
       <div class="form-group">
         <label for="exampleFormControlInput1">Name</label>
         <input name="name" formControlName="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name" value="{{i.name}}" >
@@ -49,17 +71,13 @@
           <option>UI</option>
         </select>
       </div>
-      <!-- <label class="custom-file">
-        <input name="image" formControlName="image" type="file" id="file" class="custom-file-input">
-        <span class="custom-file-control"></span>
-      </label> -->
+  
       <div class="btns">
-          <!-- (click)="modalRef.hide()" -->
         <button type="button" class="btn btn-tertiary mr-xs mb-sm ">Cancel</button>
         <button type="submit" class="btn btn-tertiary mr-xs mb-sm">Edit</button>
       </div>
 
-    </form>
+    </form> -->
   </div>
 </div>
 <!-- </ng-template> -->

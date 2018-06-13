@@ -5,5 +5,6 @@ export interface Iinstructor {
     email:string,
     phone:number,
     Department:string,
-    Courses:string[]
+    Courses?:string[],
+    students?:string[]
 }

@@ -4,4 +4,6 @@ export interface Icourse {
     name:string;
     description:string;
     hours:number;
+    instructors?:string[],
+    students?:string[]
 }
