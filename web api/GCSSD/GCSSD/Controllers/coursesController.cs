@@ -94,23 +94,15 @@ namespace GCSSD.Controllers
         [ResponseType(typeof(course))]
         public IHttpActionResult Deletecourse(int id)
         {
-            try
+            course course = db.course.Find(id);
+            if (course == null)
             {
-                course course = db.course.Find(id);
-                if (course == null)
-                {
-                    return NotFound();
-                }
-
-                db.course.Remove(course);
-                db.SaveChanges();
-                return Ok(course);
-
+                return NotFound();
             }
-            catch
-            {
-                throw new Exception();
-            }
+
+            db.course.Remove(course);
+            db.SaveChanges();
+            return Ok(course);
             
         }
 

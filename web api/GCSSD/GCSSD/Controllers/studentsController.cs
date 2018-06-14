@@ -97,13 +97,10 @@ namespace GCSSD.Controllers
             {
                 return NotFound();
             }
-            if (student.student_instructor == null && student.student_course == null)
-            {
+            
                 db.student.Remove(student);
                 db.SaveChanges();
-            }
-
-                return Ok(student);
+            return Ok(student);
 
 
         }

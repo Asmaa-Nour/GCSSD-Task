@@ -92,24 +92,14 @@ namespace GCSSD.Controllers
         [ResponseType(typeof(instructor))]
         public IHttpActionResult Deleteinstructor(int id)
         {
-           
-
-                instructor instructor = db.instructor.Find(id);
-                if (instructor == null)
-                {
-                    return NotFound();
-                }
-
-                if ( instructor.instructor_course == null && instructor.student_instructor == null)
+             instructor instructor = db.instructor.Find(id);
+            if (instructor == null)
             {
+                return NotFound();
+            }
                 db.instructor.Remove(instructor);
                 db.SaveChanges();
-            }
-
-                
-
-                return Ok(instructor);
-         
+                 return Ok(instructor);
 
         }
 
