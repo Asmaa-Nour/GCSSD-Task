@@ -4,8 +4,8 @@ import { InstructorServiceService } from '../../shared/services/instructor-servi
 import { Iinstructor } from '../../shared/interfaces/Iinstructor';
 import {NgControl} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { Icourse } from '../../shared/interfaces/Icourse';
+import { Istudent } from '../../shared/interfaces/Istudent';
 
 @Component({
   selector: 'app-instructor-add',
@@ -20,51 +20,21 @@ export class InstructorAddComponent implements OnInit {
   email:string;
   department:string;
 courses:Icourse[];
+students:Istudent[];
+Courses = new FormControl();
+Students=new FormControl();
+CourseList=['network','javascript','c++','data structure']
+StudentList=['Ahmed Sayed','Ali Ahmed','Osama Ali','Ali Sayed']
+
   add(form) {
     this.InstructorServiceService.instructors.push(form.value);
     this.InstructorServiceService.add(form).subscribe(instructor => this.InstructorServiceService.instructors.push(instructor));
-    this.router.navigate(['../instructor.component.html']);
+    this.router.navigate(['/instructor/component']);
   }
-
-  goBack() {
-    this.location.back();
-  }
-
-  constructor(private InstructorServiceService: InstructorServiceService,private location: Location,private router: Router) {
+  constructor(private InstructorServiceService: InstructorServiceService,private router: Router) {
 
    }
 
   ngOnInit() {
   }
-
-  // i: Iinstructor;
-  // myForm: FormGroup;
-  // constructor(private InstructorServiceService: InstructorServiceService,private route:Router) { }
-
-  // ngOnInit() {
-  //   this.myForm = new FormGroup({
-  //     name: new FormControl(),
-  //     phone: new FormControl(),
-  //     email: new FormControl(),
-  //     courses: new FormControl(),
-  //     department: new FormControl(),
-  //     //image:new FormControl()
-  //   });
-  // }
-  // add() {
-  //   debugger
-  //   this.i={
-  //     id:6,
-  //     name: this.myForm.get('name').value,
-  //     phone:this.myForm.get('phone').value,
-  //     email:this.myForm.get('email').value,
-  //     Courses:this.myForm.get('courses').value,
-  //     Department:this.myForm.get('department').value,
-  //     image:'../../../assets/Unknown.jpg'
-  //   }
-  //   this.InstructorServiceService.add(this.i);    
-  //   this.myForm.reset();
-  //   //console.log(this.i);
-  //   this.route.navigate(['instructor/component']);
-  // }
 }

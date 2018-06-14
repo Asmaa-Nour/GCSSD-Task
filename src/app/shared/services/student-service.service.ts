@@ -29,9 +29,30 @@ export class StudentServiceService {
 }
 
   delete(id: number): Observable<{}> {
+    var i =this.students.findIndex(a=> a.id === id);
+    this.students.splice(i,1);
     const url = `${this.url}/${id}`;
     return this.http.delete(url);
   }
+  // delete(id: number){    
+  //   const url = `${this.url}/${id}`;
+  //   this.http.delete(url).subscribe(
+  //     (isSuccess)=>
+  //     {
+  //       if(isSuccess)
+  //       { 
+  //         debugger
+  //         var i =this.students.findIndex(a=> a.id === id);
+  //         this.students.splice(i,1);
+  //         this.http.delete(url);
+  //       }
+  //     },
+  //     (error)=> {
+  //       alert('you can not delete this student since it has a relation with courses and instructors');
+  //     }
+  //   );
+  // }
+
   edit(student): Observable<Istudent> {
     const url = `${this.url}/${student.id}`;
     //console.log(url);
@@ -43,86 +64,4 @@ export class StudentServiceService {
   }
 
 }
-
-
-
-  // students: Istudent[] = [
-  //   {
-  //    id:1,
-  //    name:'mohamed taher',
-  //    phone:1423,
-  //    email:"as@sd.com",
-  //    courses:['c#','c++','c']
-  //   },
-  //   {
-  //     id:2,
-  //     name:'taher mohamed',
-  //     phone:14553,
-  //     email:"as@sd.com",
-  //     courses:['c#','network','java']
-  //    },
-  //    {
-  //     id:3,
-  //     name:'mohamed taher',
-  //     phone:1423,
-  //     email:"as@sd.com",
-  //     courses:['c#','c++','c']
-  //    },
-  //    {
-  //     id:4,
-  //     name:'taher mohamed',
-  //     phone:14553,
-  //     email:"as@sd.com",
-  //     courses:['c#','network','java']
-  //    },
-  //    {
-  //     id:5,
-  //     name:'mohamed taher',
-  //     phone:1423,
-  //     email:"as@sd.com",
-  //     courses:['c#','c++','c']
-  //    },
-  //    {
-  //     id:6,
-  //     name:'taher mohamed',
-  //     phone:14553,
-  //     email:"as@sd.com",
-  //     courses:['c#','network','java']
-  //    }
-  // ]
-  // constructor() { }
-  // getAll() {
-  //   return this.students;
-  // }
-
-  // getById(id) {
-  //   for (let i = 0; i < this.students.length; i++) {
-  //     if (this.students[i].id == id) {
-  //       this.student= this.students[i];
-  //     }
-  //   }
-  //   return this.student;
-  // }
-
-
-  // delete(id:number){
-  //   for(let i=0;i<this.students.length;i++){
-  //     if(this.students[i].id==id){
-  //       this.students.splice(i,1);
-  //     }
-  //   }
-
-  // }
-
-  // add(s:Istudent){
-  //   this.students.push(s);
-  // }
-  // update(newStudent:Istudent){
-  //   const oldStudent=this.getById(newStudent.id);
-  //   oldStudent.name=newStudent.name;
-  //   oldStudent.courses=newStudent.courses;
-  //   oldStudent.email=newStudent.email;
-  //   oldStudent.phone=newStudent.phone;
-    // oldStudent.image=newStudent.image;
-  //}
 

@@ -18,9 +18,7 @@ export class InstructorListingComponent implements OnInit {
     });
   }
   delete(id: number) {
-    var instructor = this.InstructorServiceService.instructors.map(function (item) { return item.id; }).indexOf(id);
-    this.InstructorServiceService.instructors.splice(instructor, 1);
-    this.InstructorServiceService.delete(id).subscribe();
+    this.InstructorServiceService.delete(id);
   }
   constructor(private InstructorServiceService: InstructorServiceService) { }
   ngOnInit() {

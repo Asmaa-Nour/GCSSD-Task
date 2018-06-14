@@ -12,6 +12,7 @@ import { InstructorEditComponent } from './instructor-edit/instructor-edit.compo
 import { InstructorMenuItemComponent } from './instructor-menu-item/instructor-menu-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InstructorDetailsComponent } from './instructor-details/instructor-details.component';
+import { MatSelectModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { InstructorDetailsComponent } from './instructor-details/instructor-deta
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   declarations: [InstructorComponent,
     InstructorAddComponent,

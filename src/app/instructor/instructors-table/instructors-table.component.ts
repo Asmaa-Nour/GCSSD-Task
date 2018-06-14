@@ -22,8 +22,8 @@ export class InstructorsTableComponent implements OnInit {
     //this.instructors=this.InstructorServiceService.getInstructors();
     this.getInstructors();
   }
-  delete(){
-    this.InstructorServiceService.delete(this.instructor.id);
+  delete(id){
+    this.InstructorServiceService.delete(id);
   }
 
 }

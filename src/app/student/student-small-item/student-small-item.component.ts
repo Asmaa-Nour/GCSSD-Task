@@ -15,9 +15,7 @@ export class StudentSmallItemComponent implements OnInit {
   ngOnInit() {
   
   }
-  delete(){
-    this.StudentServiceService.delete(this.student.id);
+  delete(id){
+    this.StudentServiceService.delete(id);
   }
-  
-
 }

@@ -20,6 +20,7 @@
       <h5 class="card-title">{{student.name}}</h5>
       <p class="card-text">{{student.phone}}</p>
       <p class="card-text">{{student.email}}</p>
+      <a [routerLink]="['/student/details',student.id]"></a>
      <a href="#" class="btn btn-primary knowMore">Know more</a>
 
     </div>

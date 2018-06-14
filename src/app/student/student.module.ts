@@ -13,6 +13,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
     StudentAddComponent,
     StudentListingComponent,
     StudentTableComponent,
-    StudentMenuComponentComponent
+    StudentMenuComponentComponent,
+    StudentDetailsComponent
 ]
 })
 export class StudentModule { }

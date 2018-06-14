@@ -23,10 +23,11 @@ export class CourseTableComponent implements OnInit {
     //this.courses=this.CourseServiceService.getCourses();
     this.getCourses();
   }
-  delete(id:number){
-    console.log(this.course);
-    debugger
-    this.CourseServiceService.delete(this.course.id);
+  delete(id){
+    let course= this.CourseServiceService.courses.find(a=>a.id ==id);
+    var i =this.CourseServiceService.courses.indexOf(course);
+    this.CourseServiceService.courses.splice(i,1);
+    this.CourseServiceService.delete(id);
   }
 
 }

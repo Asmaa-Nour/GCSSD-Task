@@ -17,6 +17,12 @@ export class CourseAddComponent implements OnInit {
   name: string;
   description: string;
   hours: number;
+
+Students=new FormControl();
+StudentList=['Ahmed Sayed','Ali Ahmed','Osama Ali','Ali Sayed'];
+Instructors=new FormControl();
+instructorList=['Ahmed Sayed','Ali Ahmed','Osama Ali','Ali Sayed']
+
   add(form) {
     this.CourseServiceService.courses.push(form.value);
     this.CourseServiceService.add(form).subscribe(course => this.CourseServiceService.courses.push(course));

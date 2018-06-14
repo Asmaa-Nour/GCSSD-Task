@@ -13,8 +13,10 @@ export class CourseSmallItemComponent implements OnInit {
 
   ngOnInit() {
   }
-  delete(){
-    this.CourseServiceService.delete(this.course.id);
+  delete(id){
+    
+    this.CourseServiceService.delete(id);
   }
+
 
 }

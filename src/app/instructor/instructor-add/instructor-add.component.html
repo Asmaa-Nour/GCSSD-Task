@@ -4,7 +4,6 @@
 
 <div class="row div1">
   <div class="col-md-6">
-      <button class="btn btn-primary back-btn" (click)="goBack()">Go Back</button>
    
       <form #f="ngForm" (ngSubmit)="add(f)" ngNativeValidate>
           <div class="form-group">
@@ -21,12 +20,21 @@
           </div>
           <div class="form-group">
             <label for="department">dapartment</label>
-            <input type="text" name="department" placeholder="enter your department" class="form-control" [(ngModel)]="department" id="date">
+            <input type="text" name="department" placeholder="enter your department" class="form-control" [(ngModel)]="department" id="department">
           </div>
-          <div class="form-group">
-              <label for="courses">courses</label>
-              <input type="text" name="courses" placeholder="enter your courses" class="form-control" [(ngModel)]="courses" id="date">
-            </div>
+
+            <mat-form-field class="muliSelect">
+              <mat-select placeholder="CourseList" [formControl]="Courses" multiple>
+                <mat-option *ngFor="let course of CourseList" [value]="course">{{course}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field class="muliSelect">
+              <mat-select placeholder="StudentList" [formControl]="Students" multiple>
+                <mat-option *ngFor="let student of StudentList" [value]="student">{{student}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
   
           <button type="submit" class="btn btn-primary submit-btn">Submit</button>
         </form>
@@ -34,51 +42,3 @@
   </div>
 </div>
 
-
-   <!-- <form [formGroup]="myForm" (ngSubmit)="add()">
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Name</label>
-        <input name="name" formControlName="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Phone</label>
-        <input name="phone" formControlName="phone" type="email" class="form-control" id="exampleFormControlInput1" placeholder="enter your phone">
-      </div>
- 
-      <div class="form-group">
-        <label for="inputEmail" class="control-label">Email address</label>
-        <input name="email" formControlName="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    <div class="help-block with-errors"></div>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="Department">Department</label>
-        <select name="department" formControlName="department" class="form-control" id="Department">
-          <option>IT</option>
-          <option>Finance</option>
-          <option>Commerce</option>
-          <option>HR</option>
-          <option>Bussines Intillegnce</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="Courses">Courses</label>
-        <select  name="courses" formControlName="courses" multiple class="form-control" id="Courses">
-          <option>OOP</option>
-          <option>Data Base</option>
-          <option>Photoshop</option>
-          <option>UI</option>
-        </select>
-      </div>
-      <!-- <label class="custom-file">
-        <input name="image" formControlName="image" type="file" id="file" class="custom-file-input">
-        <span class="custom-file-control"></span>
-      </label> -->
-      <!-- <div class="btns"> -->
-          <!-- (click)="modalRef.hide()" -->
-        <!-- <button type="button" class="btn btn-tertiary mr-xs mb-sm ">Cancel</button>
-        <button type="submit" class="btn btn-tertiary mr-xs mb-sm">Add</button>
-      </div> -->
-
-    <!-- </form>  -->

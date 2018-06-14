@@ -8,8 +8,7 @@ form{
     margin-top: 2%;
 }
 .btns{
-    float: right;
-   
+    float: right;  
 }
 .btn{
     margin:5px; 
@@ -20,4 +19,6 @@ form{
 .mySelect{
     width: 100%;
 }
-
+.muliSelect{
+    width:100%;
+}

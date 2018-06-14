@@ -36,7 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { InstructorDetailsComponent } from './instructor/instructor-details/instructor-details.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { StudentDetailsComponent } from './student/student-details/student-details.component';
 
 const routes: Routes = [
   {path :'', component : InstructorComponent},
@@ -61,7 +61,9 @@ const routes: Routes = [
     { path: 'add', component: StudentAddComponent},
     { path: 'listing', component: StudentListingComponent},
     { path: 'table', component: StudentTableComponent},
-    { path:'edit/:id' , component: StudentEditComponent}
+    { path:'edit/:id' , component: StudentEditComponent},
+    { path:'details/:id' , component: StudentDetailsComponent}
+    
   ]},
   
 
@@ -95,6 +97,7 @@ const routes: Routes = [
     StudentAddComponent,
     StudentTableComponent,
     StudentComponent,
+    StudentDetailsComponent,
 
     //menus
     StudentMenuComponentComponent,

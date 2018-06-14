@@ -16,11 +16,11 @@ export class CourseListingComponent implements OnInit {
       this.courses=this.CourseServiceService.courses;
     });
   }
-  delete(id: number) {
-    var course = this.CourseServiceService.courses.map(function (item) { return item.id; }).indexOf(id);
-    this.CourseServiceService.courses.splice(course, 1);
-    this.CourseServiceService.delete(id).subscribe();
-  }
+  // delete(id: number) {
+  //   var course = this.CourseServiceService.courses.map(function (item) { return item.id; }).indexOf(id);
+  //   this.CourseServiceService.courses.splice(course, 1);
+  //   this.CourseServiceService.delete(id);
+  // }
   constructor(private CourseServiceService: CourseServiceService) { }
   ngOnInit() {
    // debugger;

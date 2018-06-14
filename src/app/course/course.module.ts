@@ -10,13 +10,15 @@ import { CourseTableComponent } from './course-table/course-table.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CourseMenuItemComponent } from './course-menu-item/course-menu-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   declarations: [CourseComponent,
     CourseSmallItemComponent,
