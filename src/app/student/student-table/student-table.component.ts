@@ -23,10 +23,7 @@ export class StudentTableComponent implements OnInit {
     this.getStudents();
   }
   delete(id){
-    let student= this.StudentServiceService.students.find(a=>a.id ==id);
-    var i =this.StudentServiceService.students.indexOf(student);
-    this.StudentServiceService.students.splice(i,1);
-    this.StudentServiceService.delete(id).subscribe();
+    this.StudentServiceService.delete(id);
   }
 
 }

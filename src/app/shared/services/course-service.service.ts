@@ -30,29 +30,26 @@ export class CourseServiceService {
   return this.courses.find(course => course.id == id);
 }
 
-delete(id: number): Observable<{}> {
-  var i =this.courses.findIndex(a=> a.id === id);
-  this.courses.splice(i,1);
-  const url = `${this.url}/${id}`;
-  return this.http.delete(url);
-}
-  // delete(id: number){    
-  //   const url = `${this.url}/${id}`;
-  //   this.http.delete(url).subscribe(
-  //     (isSuccess)=>
-  //     {
-  //       if(isSuccess)
-  //       { 
-  //         //debugger;
-  //         var i =this.courses.findIndex(a=> a.id === id);
-  //         this.courses.splice(i,1);
-  //       }
-  //     },
-  //     (error)=> {
-  //       console.log('error happen');
-  //     }
-  //   );
-  // }
+// delete(id: number): Observable<{}> {
+//   return this.http.delete("http://localhost:2097/api/courses/" + id )
+// }
+  delete(id: number){    
+    const url = `${this.url}/${id}`;
+    this.http.delete(url).subscribe(
+      (isSuccess)=>
+      {
+        if(isSuccess)
+        { 
+          //debugger;
+          var i =this.courses.findIndex(a=> a.id === id);
+          this.courses.splice(i,1);
+        }
+      },
+      (error)=> {
+        console.log('error happen');
+      }
+    );
+  }
   edit(course): Observable<Icourse> {
     const url = `${this.url}/${course.id}`;
     console.log(url);

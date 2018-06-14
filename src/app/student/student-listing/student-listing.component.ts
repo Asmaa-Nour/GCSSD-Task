@@ -18,9 +18,9 @@ export class StudentListingComponent implements OnInit {
     });
   }
   delete(id: number) {
-    var student = this.StudentServiceService.students.map(function (item) { return item.id; }).indexOf(id);
-    this.StudentServiceService.students.splice(student, 1);
-    this.StudentServiceService.delete(id).subscribe();
+    // var student = this.StudentServiceService.students.map(function (item) { return item.id; }).indexOf(id);
+    // this.StudentServiceService.students.splice(student, 1);
+    this.StudentServiceService.delete(id);
   }
   constructor(private StudentServiceService: StudentServiceService) { }
   ngOnInit() {

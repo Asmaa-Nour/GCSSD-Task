@@ -24,9 +24,6 @@ export class CourseTableComponent implements OnInit {
     this.getCourses();
   }
   delete(id){
-    let course= this.CourseServiceService.courses.find(a=>a.id ==id);
-    var i =this.CourseServiceService.courses.indexOf(course);
-    this.CourseServiceService.courses.splice(i,1);
     this.CourseServiceService.delete(id);
   }
 

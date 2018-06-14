@@ -15,21 +15,21 @@
             <th scope="col" width="300">Courses</th>
             <th scope="col" width="100"> </th>
         </tr>
-        <tr *ngFor="let instructor of instructors">
-            <td width="50">{{instructor.id}}</td>
-            <td>{{instructor.name}}</td>
-            <td>{{instructor.phone}}</td>
-            <td>{{instructor.email}}</td>
-            <td>{{instructor.Department}}</td>
+        <tr *ngFor="let i of instructors">
+            <td width="50">{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.Department}}</td>
             <td>
-                <p>{{instructor.Courses}}</p>
+                <p>{{i.Courses}}</p>
             </td>
             <td class="btns">
-                <button class="btn1" (click)="delete(instructor.id)">
+                <button class="btn1" (click)="delete(i.id)">
                     <i class="fas fa-trash-alt"></i>
                 </button>
 
-                <a [routerLink]="['/instructor/edit',instructor.id]">
+                <a [routerLink]="['/instructor/edit',i.id]">
                     <button class="btn2">
                         <i class="fas fa-edit"> </i>
                     </button>
