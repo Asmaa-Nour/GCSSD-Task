@@ -21,6 +21,7 @@ export class InstructorsTableComponent implements OnInit {
   ngOnInit() {
     //this.instructors=this.InstructorServiceService.getInstructors();
     this.getInstructors();
+    //console.log(this.getInstructors());
   }
   delete(id){
     this.InstructorServiceService.delete(id);

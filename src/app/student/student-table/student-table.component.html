@@ -8,16 +8,16 @@
             <th scope="col" width="50">#</th>
             <th scope="col" width="150">Name</th>
             <th scope="col" width="150">Phone</th>
-            <th scope="col" width="150">Email</th>
-            <th scope="col" width="150">Birthdate</th>
+            <th scope="col" width="150">Courses</th>
+            <th scope="col" width="150">Instructors</th>
             <th scope="col" width="100"> </th>
         </tr>
         <tr *ngFor="let student of students">
             <td width="50">{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.phone}}</td>
-            <td>{{student.email}}</td>
-            <td>{{student.dateOfBirth}}</td>
+            <td>{{student.courses}}</td>
+            <td>{{student.instructors}}</td>
           
             <td class="btns">
                 <button class="btn1" (click)="delete(student.id)">

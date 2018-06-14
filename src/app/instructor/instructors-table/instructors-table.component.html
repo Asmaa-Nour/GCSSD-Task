@@ -10,17 +10,15 @@
             <th scope="col" width="50">#</th>
             <th scope="col" width="150">Name</th>
             <th scope="col" width="150">Phone</th>
-            <th scope="col" width="150">Email</th>
-            <th scope="col" width="150">Department</th>
-            <th scope="col" width="300">Courses</th>
+            <th scope="col" width="150">Students</th>
+            <th scope="col" width="150">Courses</th>
             <th scope="col" width="100"> </th>
         </tr>
         <tr *ngFor="let i of instructors">
             <td width="50">{{i.id}}</td>
             <td>{{i.name}}</td>
             <td>{{i.phone}}</td>
-            <td>{{i.email}}</td>
-            <td>{{i.Department}}</td>
+            <td>{{i.students}}</td>
             <td>
                 <p>{{i.Courses}}</p>
             </td>
